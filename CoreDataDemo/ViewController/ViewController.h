@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class Item;
+
+@interface ViewController : UITableViewController {
+    
+}
+
+@property (nonatomic, strong) Item *rootItem;
 
 @end

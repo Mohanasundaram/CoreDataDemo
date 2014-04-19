@@ -7,12 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "Item.h"
+#import "PersistenceStack.h"
+#import "Store.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.persistenceStack = [[PersistenceStack alloc] initWithStoreURL:[self storeURL] modelURL:[self modelURL]];
+    self.store = [[Store alloc] init];
+    self.store.managedObjectContex = self.persistenceStack.managedObjectContext;
+    
+    
+    UINavigationController *navigationController = (UINavigationController *) self.window.rootViewController;
+    ViewController *viewController = (ViewController*)navigationController.topViewController;
+    
+//    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+//    UINavigationController *navigationController = [mainStoryBoard instantiateInitialViewController];
+//    ViewController *viewController = (ViewController *)navigationController.topViewController;
+    viewController.rootItem = self.store.rootItem;
+    
     return YES;
 }
 							
@@ -41,6 +57,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Fetch root item
+
+- (NSURL *)storeURL
+{
+    NSURL *storeURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
+    return [storeURL URLByAppendingPathComponent:@"db.sqlite"];
+}
+
+- (NSURL *)modelURL
+{
+    return [[NSBundle mainBundle] URLForResource:@"DemoModel" withExtension:@"momd"];
 }
 
 @end
