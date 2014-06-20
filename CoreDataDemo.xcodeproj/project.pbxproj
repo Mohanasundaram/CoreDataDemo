@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D88ED24D195419E2000401FD /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = D88ED24C195419E2000401FD /* Employee.m */; };
+		D88ED250195419E2000401FD /* Department.m in Sources */ = {isa = PBXBuildFile; fileRef = D88ED24F195419E2000401FD /* Department.m */; };
+		D88ED258195436CC000401FD /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D88ED257195436CC000401FD /* BaseModel.m */; };
 		D8E1916E190247BD0024691B /* DemoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E1916C190247BD0024691B /* DemoModel.xcdatamodeld */; };
 		D8E19171190248D40024691B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E19170190248D40024691B /* Item.m */; };
 		D8E1917F1902BF9E0024691B /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1917E1902BF9E0024691B /* Store.m */; };
@@ -40,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D88ED24B195419E2000401FD /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Employee.h; path = Model/Employee.h; sourceTree = "<group>"; };
+		D88ED24C195419E2000401FD /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Employee.m; path = Model/Employee.m; sourceTree = "<group>"; };
+		D88ED24E195419E2000401FD /* Department.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Department.h; path = Model/Department.h; sourceTree = "<group>"; };
+		D88ED24F195419E2000401FD /* Department.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Department.m; path = Model/Department.m; sourceTree = "<group>"; };
+		D88ED256195436CC000401FD /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = Model/BaseModel.h; sourceTree = "<group>"; };
+		D88ED257195436CC000401FD /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = Model/BaseModel.m; sourceTree = "<group>"; };
 		D8E1916D190247BD0024691B /* DemoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DemoModel.xcdatamodel; sourceTree = "<group>"; };
 		D8E1916F190248D40024691B /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Model/Item.h; sourceTree = "<group>"; };
 		D8E19170190248D40024691B /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Model/Item.m; sourceTree = "<group>"; };
@@ -98,8 +107,14 @@
 		D8E19172190248DC0024691B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D88ED256195436CC000401FD /* BaseModel.h */,
+				D88ED257195436CC000401FD /* BaseModel.m */,
 				D8E1916F190248D40024691B /* Item.h */,
 				D8E19170190248D40024691B /* Item.m */,
+				D88ED24E195419E2000401FD /* Department.h */,
+				D88ED24F195419E2000401FD /* Department.m */,
+				D88ED24B195419E2000401FD /* Employee.h */,
+				D88ED24C195419E2000401FD /* Employee.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,9 +326,12 @@
 				D8E191861902BFC80024691B /* ViewController.m in Sources */,
 				D8E191821902BFAE0024691B /* PersistenceStack.m in Sources */,
 				D8E19171190248D40024691B /* Item.m in Sources */,
+				D88ED258195436CC000401FD /* BaseModel.m in Sources */,
 				D8E191891902BFE80024691B /* FetchedResultsControllerDataSource.m in Sources */,
 				D8EAD8931900ED3000AB7CB5 /* AppDelegate.m in Sources */,
+				D88ED250195419E2000401FD /* Department.m in Sources */,
 				D8EAD88F1900ED3000AB7CB5 /* main.m in Sources */,
+				D88ED24D195419E2000401FD /* Employee.m in Sources */,
 				D8E1916E190247BD0024691B /* DemoModel.xcdatamodeld in Sources */,
 				D8E1917F1902BF9E0024691B /* Store.m in Sources */,
 			);

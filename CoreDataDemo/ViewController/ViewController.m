@@ -144,4 +144,14 @@ static NSString* const selectItemSegue = @"selectItem";
     [item.managedObjectContext deleteObject:item];
 }
 
+#pragma mark - Undo
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (NSUndoManager*)undoManager
+{
+    return self.managedObjectContext.undoManager;
+}
 @end

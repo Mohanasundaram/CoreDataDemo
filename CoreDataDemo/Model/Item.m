@@ -46,4 +46,17 @@
     return [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
 }
 
+
+- (void)prepareForDeletion
+{
+    if (self.parent.isDeleted) return;
+    
+    NSSet* siblings = self.parent.children;
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"order > %@", self.order];
+    NSSet* itemsAfterSelf = [siblings filteredSetUsingPredicate:predicate];
+    [itemsAfterSelf enumerateObjectsUsingBlock:^(Item* sibling, BOOL* stop)
+     {
+         sibling.order = @(sibling.order.integerValue - 1);
+     }];
+}
 @end

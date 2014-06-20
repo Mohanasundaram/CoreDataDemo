@@ -41,6 +41,19 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        id object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.delegate fetchedResultsControllerDataSource:self deleteObject:object];
+    }
+}
+
 - (id)selectedItem
 {
     NSIndexPath* path = self.tableView.indexPathForSelectedRow;
